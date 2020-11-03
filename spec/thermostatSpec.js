@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Feature Test', function(){
+describe('Thermostat', function(){
   var thermostat;
 
   beforeEach(function(){
@@ -9,5 +9,10 @@ describe('Feature Test', function(){
 
   it('has a default temperature of 20', function(){
     expect(thermostat.currentTemperature()).toEqual(20);
+  });
+
+  it('increases the temperature', function(){
+    thermostat.up(4);
+    expect(thermostat.currentTemperature()).toEqual(24);
   });
 });

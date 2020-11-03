@@ -8,4 +8,8 @@ class Thermostat {
   currentTemperature(){
     return this._temperature;
   };
+
+  up(increment){
+    this._temperature += increment;
+  }
 };
