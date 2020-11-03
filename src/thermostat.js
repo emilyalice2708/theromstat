@@ -51,4 +51,14 @@ class Thermostat {
   reset(){
     this._temperature = 20;
   }
+
+  currentUsage(){
+    if (this._temperature < 18){
+      return 'low-usage'
+    } else if (this._temperature <= 25){
+      return 'medium-usage'
+    } else {
+      return 'high-usage'
+    }
+  }
 };
