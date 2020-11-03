@@ -20,4 +20,9 @@ describe('Thermostat', function(){
     thermostat.down(6);
     expect(thermostat.currentTemperature()).toEqual(14);
   });
+
+  it('has a mimum temperature of 10', function(){
+    thermostat.down(12);
+    expect(thermostat.currentTemperature()).toEqual(10);
+  })
 });
