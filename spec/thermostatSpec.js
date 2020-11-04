@@ -12,17 +12,19 @@ describe('Thermostat', function(){
   });
 
   it('increases the temperature', function(){
-    thermostat.up(4);
-    expect(thermostat.currentTemperature()).toEqual(24);
+    thermostat.up();
+    expect(thermostat.currentTemperature()).toEqual(21);
   });
 
   it('decreases the temperature', function(){
-    thermostat.down(6);
-    expect(thermostat.currentTemperature()).toEqual(14);
+    thermostat.down();
+    expect(thermostat.currentTemperature()).toEqual(19);
   });
 
   it('has a mimum temperature of 10', function(){
-    thermostat.down(12);
+    for (var i = 0; i < 12; i ++) {
+      thermostat.down();
+    }
     expect(thermostat.currentTemperature()).toEqual(10);
   });
 
@@ -39,7 +41,9 @@ describe('Thermostat', function(){
 
   describe('when power-saving mode is on', function(){
     it('has a maximum temperature of 25 degrees', function(){
-      thermostat.up(25);
+      for (var i = 0; i < 6; i ++) {
+        thermostat.up();
+      }
       expect(thermostat.currentTemperature()).toEqual(25);
     });
   });
@@ -47,7 +51,9 @@ describe('Thermostat', function(){
   describe('when power-saving mode is off', function(){
     it('has a maximum temperature of 32 degrees', function(){
       thermostat.powerSavingOff();
-      thermostat.up(25);
+      for (var i = 0; i < 14; i ++) {
+        thermostat.up();
+      }
       expect(thermostat.currentTemperature()).toEqual(32);
     });
   });
@@ -59,7 +65,9 @@ describe('Thermostat', function(){
 
   describe('when temperature < 18', function(){
     it('returns low-usage', function(){
-      thermostat.down(10);
+      for (var i = 0; i < 10; i ++) {
+        thermostat.down();
+      }
       expect(thermostat.currentUsage()).toEqual('low-usage');
     });
   });
@@ -73,7 +81,9 @@ describe('Thermostat', function(){
   describe('when temperature > 25', function(){
     it('returns high-usage', function(){
       thermostat.powerSavingOff();
-      thermostat.up(10);
+      for (var i = 0; i < 6; i ++) {
+        thermostat.up();
+      }
       expect(thermostat.currentUsage()).toEqual('high-usage');
     });
   });

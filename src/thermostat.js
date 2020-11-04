@@ -11,20 +11,18 @@ class Thermostat {
     return this._temperature;
   };
 
-  up(increment){
-    if (this._temperature + increment > this.currentMaximumTemperature()){
-      this._temperature = this.currentMaximumTemperature();
+  up(){
+    if (this._temperature === this.currentMaximumTemperature()){
       return;
     };
-    this._temperature += increment;
+    this._temperature += 1;
   };
 
-  down(increment){
-    if (this._temperature - increment < this._MIN_TEMP){
-      this._temperature = this._MIN_TEMP;
+  down(){
+    if (this._temperature === this._MIN_TEMP){
       return;
     };
-    this._temperature -= increment;
+    this._temperature -= 1;
   };
 
   isPowerSaving(){
