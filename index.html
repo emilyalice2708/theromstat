@@ -4,29 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="./public/css/style.css">
+  <script src="public/js/jquery-3.5.1.js"></script>
   <title>Thermostat</title>
 </head>
 <body>
   <section>
-    <h1>Current Temperature: <span id='current-temp'></span></h1>
-    <form id="select-city">
-      <input id="current-city" type="text" placeholder="Enter a city"></input>
+    <h1 class='local-temp'>Local Temperature <span id='current-temp'></span></h1>
+    <form class='local-info' id="select-city">
+      <input id="current-city" type="text" placeholder="Enter your city"></input>
       <input type="submit"></input>
     </form>
   </section>
-  <section>
+  <section class='thermo'>
     <h1 id='temperature'>Temperature</h1>
     <p>
-      <button id='temp-up'>Temp up</button>
-      <button id='temp-down'></button>
-      <button id='temp-reset'></button>
-      Power saving mode is <span id='power-saving-status'>on</span>
+      <button id='temp-up'>+</button>
+      <button id='temp-down'>-</button>
+      <button id='temp-reset'>RESET</button><br><br>
+      POWER SAVING MODE <span id='power-saving-status'>ON</span>
       <button id='psm-on'>PSM on</button>
       <button id='psm-off'>PSM off</button>
     </p>
   </section>
-  <script src="public/js/jquery-3.5.1.js"></script>
-  <script src='src/thermostat.js'></script>
-  <script src="public/js/interface.js"></script>
+  <script type="text/javascript" src='src/thermostat.js'></script>
+  <script type="text/javascript" src="public/js/interface.js"></script>
 </body>
 </html>

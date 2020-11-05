@@ -27,13 +27,13 @@ $(document).ready(function() {
 
   $('#psm-on').click(function() {
     thermostat.powerSavingOn();
-    $('#power-saving-status').text('on')
+    $('#power-saving-status').text('ON')
     updateTemperature();
   });
 
   $('#psm-off').click(function() {
     thermostat.powerSavingOff();
-    $('#power-saving-status').text('off')
+    $('#power-saving-status').text('OFF')
     updateTemperature();
   });
 
@@ -47,7 +47,7 @@ $(document).ready(function() {
     var token = '&appid=a3d9eb01d4de82b9b8d0849ef604dbed';
     var units = '&units=metric';
     $.get(url + token + units, function(data) {
-      $('#current-temp').text(data.main.temp);
+      $('#current-temp').text(`in ${data.name}: ${data.main.temp} °C`);
     })
   }
 });

@@ -1,5 +1,31 @@
+body {
+  font-family: monospace;
+  background-color: rgb(216, 250, 230);
+}
+
+.local-info  {
+  width: 200;
+  margin: 10px auto;
+  padding: 5px;
+  border-width: 10px;
+}
+
+.thermo {
+  width: 500px;
+  margin: 20px auto;
+  padding: 70px;
+  border-width: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+#temperature {
+  text-align: center;
+  font-size: 50px;
+}
+
 .low-usage {
-  color: green;
+  color: #00e68a;
 }
 
 .medium-usage {
@@ -7,5 +33,12 @@
 }
 
 .high-usage {
-  color: red;
+  color: #b30000;
+  animation: blinker 1s step-start infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
