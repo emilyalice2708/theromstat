@@ -4,7 +4,7 @@
 
 Clone this repository:
 ```
-https://github.com/emilyalice2708/theromstat
+git clone https://github.com/emilyalice2708/theromstat
 ```
 
 Run bundle:
