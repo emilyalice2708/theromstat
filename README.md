@@ -4,7 +4,7 @@
 This is a Makers week 6 project, marking the beginning of our introduction to javascript.
 
 
-## The main branch
+### The main branch
 The specifications:
 
 - Thermostat starts at 20 degrees
