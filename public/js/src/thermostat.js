@@ -35,7 +35,10 @@ class Thermostat {
 
   powerSavingOn(){
     this._powerSaving = true;
-  }
+    if (this._temperature > this.currentMaximumTemperature()){
+      this._temperature = 25;
+    };
+  };
 
   currentMaximumTemperature(){
     if (this._powerSaving){

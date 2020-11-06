@@ -56,6 +56,15 @@ describe('Thermostat', function(){
       }
       expect(thermostat.currentTemperature()).toEqual(32);
     });
+
+    it('resets temperature if power saving mode is turned on', function(){
+      thermostat.powerSavingOff();
+      for (var i = 0; i < 14; i ++) {
+        thermostat.up();
+      }
+      thermostat.powerSavingOn();
+      expect(thermostat.currentTemperature()).toEqual(25);
+    })
   });
 
   it('can be reset to 20 degrees', function(){
